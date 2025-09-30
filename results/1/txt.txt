@@ -1,0 +1,11 @@
+9/13/25
+
+cut early as I realized the 5 trials at 15 million was too much for this task
+
+going to run a few more other ones at this big level to see how many steps I should step
+set for easier tasks 
+
+then I will run some longer on longer tasks but going to do two levels so I have some results
+
+
+may reduce from 5 to 3 trials to speed up computation 

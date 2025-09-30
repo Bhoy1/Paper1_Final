@@ -1,0 +1,20 @@
+{
+  "seed": 30,
+  "num_trials": 5,
+  "model_name": "PPOGRU",
+  "env_id": "popgym-CountRecallEasy-v0",
+  "steps_per_epoch": 2048,
+  "mini_batch_size": 256,
+  "sgd_passes": 4,
+  "learning_rate": 0.0003,
+  "clip_epsilon": 0.25,
+  "lambda_gae": 1.0,
+  "value_loss_coef": 1.0,
+  "entropy_coef": 0.05,
+  "gamma": 0.99,
+  "total_env_steps": 15000000,
+  "tbptt_len": 1024,
+  "USE_CUDA": true,
+  "debug": false,
+  "grad_clip_norm": 0.5
+}

@@ -38,7 +38,7 @@ class Config:
     seed: int = 30
     num_trials: int = 5
     model_name: str = "PPOGRU"
-    env_id: str = 'popgym-CountRecallEasy-v0'
+    env_id: str = 'MiniGrid-Dynamic-Obstacles-5x5-v0'
     steps_per_epoch: int = 2048
     mini_batch_size: int = 256
     sgd_passes: int = 4
