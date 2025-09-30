@@ -627,19 +627,20 @@ def train(
             if config.debug:
                 print(f"[DEBUG] obs_slice.shape = {obs_slice.shape}, obs_space = {type(buf.obs_space)}")
             
-            # Handle different observation types
             if isinstance(buf.obs_space, gspaces.Discrete):
-                # Discrete observations are stored as 1D tensor of integers
-                obs_seq = obs_slice.unsqueeze(0)  # (1, T)
-            elif obs_slice.dim() == 3:  # RGB observations (T, H, W, C)
-                obs_seq = obs_slice.unsqueeze(0)  # (1, T, H, W, C)
-            elif obs_slice.dim() == 2:  # Vector observations (T, F)
-                obs_seq = obs_slice.unsqueeze(0)  # (1, T, F)
-            elif obs_slice.dim() == 1:  # Could be discrete stored as (T,)
-                obs_seq = obs_slice.unsqueeze(0)  # (1, T)
+                obs_seq = obs_slice.unsqueeze(0)
+            elif obs_slice.dim() == 4:  # Image observations (T, H, W, C)
+                obs_seq = obs_slice.unsqueeze(0)  # Add batch dimension -> (1, T, H, W, C)
+            elif obs_slice.dim() == 3:
+                obs_seq = obs_slice.unsqueeze(0)
+            elif obs_slice.dim() == 2:
+                obs_seq = obs_slice.unsqueeze(0)
+            elif obs_slice.dim() == 1:
+                obs_seq = obs_slice.unsqueeze(0)
             else:
                 raise ValueError(f"Unexpected obs_slice shape: {obs_slice.shape}")
-            
+
+
             act_seq = act_b[sl].unsqueeze(0)  # (1, T, ...)
             ret_seq = ret_b[sl].unsqueeze(0)
             adv_seq = adv_b[sl].unsqueeze(0)

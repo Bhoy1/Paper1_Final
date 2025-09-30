@@ -1,0 +1,4 @@
+9/16/25
+
+tied the baseline gru, so wont put in results, also just took 2.5 days to do 15 million 
+
