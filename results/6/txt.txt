@@ -1,0 +1,2 @@
+Trial results for popgym-RepeatFirstHard-v0 with PPOSurpriseGRUPolicy:
+MMER mean ± std over 3 trials: 0.0297 ± 0.0256

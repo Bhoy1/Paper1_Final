@@ -43,7 +43,7 @@ class Config:
     seed: int = 30
     num_trials: int = 3
     model_name: str = "PPOSurpriseScalarHSSGRU"
-    env_id: str = 'MiniGrid-Dynamic-Obstacles-5x5-v0'
+    env_id: str = 'popgym-RepeatFirstHard-v0'
     steps_per_epoch: int = 2048
     mini_batch_size: int = 256 #not used  
     sgd_passes: int = 4 #not used 
